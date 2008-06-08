@@ -161,8 +161,10 @@
 
     ;; Return a bitmap of given size with this identicon drawn on it.
     (define/public (on-bitmap size)
-      (let ((bitmap (make-object bitmap% size size)))
-        (draw (new bitmap-dc% (bitmap bitmap)))
+      (let* ((bitmap (make-object bitmap% size size))
+             (dc (new bitmap-dc% (bitmap bitmap))))
+        (draw dc)
+        (send dc set-bitmap #f)
         bitmap))
 
     ;; Save this identicon of the given size under the file-path.
