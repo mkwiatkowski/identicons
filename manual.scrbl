@@ -6,7 +6,7 @@
 
 @title{Identicons library}
 
-@defmodule*/no-declare[((planet "identicons.ss" ("mk" "identicons.plt" 1 0)))]
+@defmodule*/no-declare[((planet "identicons.ss" ("mk" "identicons.plt")))]
 @declare-exporting["identicons.ss"]
 
 This library is a PLT Scheme implementation of a graphical identification
