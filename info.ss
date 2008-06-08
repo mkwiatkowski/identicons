@@ -9,5 +9,5 @@
 (define can-be-loaded-with 'all)
 (define primary-file "identicons.ss")
 (define scribblings '(("manual.scrbl" ())))
-(define version "1.0")
-(define release-notes '("First version."))
+(define version "1.1")
+(define release-notes '("Fixed on-bitmap and display-in-frame methods, and added a new method as-image-snip. Thanks to Danny Yoo for patches!"))
