@@ -19,7 +19,8 @@ A standard way to use the library is to create an identicon using
 the @scheme[identicon%] constructor and save it to file using its
 @method[identicon% save-to-file] method. You can also take the generated
 identicon for further manipulation by converting it to a bitmap using
-the @method[identicon% on-bitmap] method.
+the @method[identicon% on-bitmap] method. For DrScheme interaction
+window love, check out @method[identicon% as-image-snip] method.
 
 @section[#:tag "identicon-object"]{identicon% class}
 
@@ -43,6 +44,10 @@ altered.}
 @defmethod[(on-bitmap [size integer?])
            (is-a?/c bitmap%)]{
 Return a bitmap of given size with this identicon drawn on it.}
+
+@defmethod[(as-image-snip [size integer?])
+           (is-a?/c image-snip%)]{
+Return an @scheme[image-snip%] of given size with this identicon inside.}
 
 @defmethod[(save-to-file [file-path path-string?] [size integer?])
            void?]{

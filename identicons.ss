@@ -167,6 +167,10 @@
         (send dc set-bitmap #f)
         bitmap))
 
+    ;; Return an image-snip% of given size with this identicon inside.
+    (define/public (as-image-snip size)
+      (make-object image-snip% (on-bitmap size)))
+
     ;; Save this identicon of the given size under the file-path.
     (define/public (save-to-file file-path size)
       (send (on-bitmap size)
