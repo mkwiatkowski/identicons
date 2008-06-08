@@ -180,13 +180,9 @@
 
     ;; Display this identicon in a square frame of a given size.
     (define/public (display-in-frame size)
-      (define (make-frame-dc)
-        (let* ((frame (new frame% (label "Identicon") (width size) (height size)))
-               (canvas (new canvas% (parent frame))))
-          (send frame show #t)
-          (sleep/yield 1)
-          (send canvas get-dc)))
-      (draw (make-frame-dc)))
+     (let* ((frame (new frame% (label "Identicon") (width size) (height size)))
+            (canvas (new canvas% (parent frame) (paint-callback (lambda (b d) (draw d))))))
+       (send frame show #t)))
 
     (super-new)))
 
